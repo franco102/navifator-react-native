@@ -1,8 +1,16 @@
-import React from 'react'
-import { Text, View } from 'react-native'
+import {  View } from 'react-native'
+import { globalStyles } from '../../theme/theme' 
+import PrimaryButton from '../../components/shared/PrimaryButton'
+import { type NavigationProp, useNavigation } from '@react-navigation/native';
+import { type RootStackParams } from '../../routes/StackNavigator';
 
-export const HomeScreen = () => {
+export const HomeScreen = () => { 
+  const navigator = useNavigation<NavigationProp<RootStackParams>>();  
   return (
-    <View><Text>Franco </Text></View>
+    <View style={globalStyles.container}>
+      <PrimaryButton label='Productos' onPress={()=>navigator.navigate('Products')}/>
+      <PrimaryButton label='Settings' onPress={()=>navigator.navigate('Settings')}/>
+      
+    </View>
   )
 }
