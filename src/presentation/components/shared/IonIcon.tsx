@@ -5,6 +5,7 @@ type IonIconProps={
     size?:number
     color?:string
 }
+// prueba
 export const IonIcon = ({name,color='black',size=20}:IonIconProps) => {
   return (
     <Icon name={name} size={size} color={color} />
